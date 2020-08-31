@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"2365566b40",applicationID:"162767507"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<title>Everything you need to know about business management and leadership | MasterStart</title>
+<style type="text/css">			.heateorSssInstagramBackground{background:radial-gradient(circle at 30% 107%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+											.heateor_sss_horizontal_sharing .heateorSssSharing,.heateor_sss_standard_follow_icons_container .heateorSssSharing{
+							color: #fff;
+						border-width: 0px;
+			border-style: solid;
+			border-color: transparent;
+		}
+				.heateor_sss_horizontal_sharing .heateorSssTCBackground{
+			color:#666;
+		}
+				.heateor_sss_horizontal_sharing .heateorSssSharing:hover,.heateor_sss_standard_follow_icons_container .heateorSssSharing:hover{
+						border-color: transparent;
+		}
+		.heateor_sss_vertical_sharing .heateorSssSharing,.heateor_sss_floating_follow_icons_container .heateorSssSharing{
+							color: #fff;
+						border-width: 0px;
+			border-style: solid;
+			border-color: transparent;
+		}
+				.heateor_sss_vertical_sharing .heateorSssTCBackground{
+			color:#666;
+		}
+				.heateor_sss_vertical_sharing .heateorSssSharing:hover,.heateor_sss_floating_follow_icons_container .heateorSssSharing:hover{
+						border-color: transparent;
+		}
+		
+		@media screen and (max-width:783px) {.heateor_sss_vertical_sharing{display:none!important}}@media screen and (max-width:783px) {.heateor_sss_floating_follow_icons_container{display:none!important}}</style>
+<!-- This site is optimized with the Yoast SEO plugin v12.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Business management is the process of dealing with the administration of any sort of organisation."/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Everything you need to know about business management and leadership | MasterStart" />
+<meta property="og:description" content="Business management is the process of dealing with the administration of any sort of organisation." />
+<meta property="og:url" content="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" />
+<meta property="og:site_name" content="MasterStart Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/masterstartsa" />
+<meta property="article:section" content="Business Leadership and Management" />
+<meta property="article:published_time" content="2019-04-01T12:34:12+00:00" />
+<meta property="article:modified_time" content="2019-10-08T11:20:42+00:00" />
+<meta property="og:updated_time" content="2019-10-08T11:20:42+00:00" />
+<meta property="og:image" content="https://masterstart.com/blog/wp-content/uploads/2019/04/BLM-content-cluster.png" />
+<meta property="og:image:secure_url" content="https://masterstart.com/blog/wp-content/uploads/2019/04/BLM-content-cluster.png" />
+<meta property="og:image:width" content="1440" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Business management is the process of dealing with the administration of any sort of organisation." />
+<meta name="twitter:title" content="Everything you need to know about business management and leadership | MasterStart" />
+<meta name="twitter:site" content="@masterstartsa" />
+<meta name="twitter:image" content="https://masterstart.com/blog/wp-content/uploads/2019/04/BLM-content-cluster.png" />
+<meta name="twitter:creator" content="@masterstartsa" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://masterstart.com/blog/#website","url":"https://masterstart.com/blog/","name":"MasterStart Blog","potentialAction":{"@type":"SearchAction","target":"https://masterstart.com/blog/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/#primaryimage","url":"https://masterstart.com/blog/wp-content/uploads/2019/04/BLM-content-cluster.png","width":1440,"height":600},{"@type":"WebPage","@id":"https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/#webpage","url":"https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/","inLanguage":"en-GB","name":"Everything you need to know about business management and leadership | MasterStart","isPartOf":{"@id":"https://masterstart.com/blog/#website"},"primaryImageOfPage":{"@id":"https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/#primaryimage"},"datePublished":"2019-04-01T12:34:12+00:00","dateModified":"2019-10-08T11:20:42+00:00","author":{"@id":"https://masterstart.com/blog/#/schema/person/ea5a9c2f63cac73393b20838086ef706"},"description":"Business management is the process of dealing with the administration of any sort of organisation."},{"@type":["Person"],"@id":"https://masterstart.com/blog/#/schema/person/ea5a9c2f63cac73393b20838086ef706","name":"Becky Leighton","image":{"@type":"ImageObject","@id":"https://masterstart.com/blog/#authorlogo","url":"https://secure.gravatar.com/avatar/180077df005e5df775952786533c4236?s=96&d=mm&r=g","caption":"Becky Leighton"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//masterstart.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="MasterStart Blog &raquo; Feed" href="https://masterstart.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="MasterStart Blog &raquo; Comments Feed" href="https://masterstart.com/blog/comments/feed/" />
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.10.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.10.0';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-107749519-2';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-107749519-2', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('require', 'displayfeatures');
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/masterstart.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style type="text/css">a.heateor_sss_amp{padding:0 4px;}div.heateor_sss_horizontal_sharing a amp-img{display:inline-block;}.heateor_sss_amp_instagram img{background-color:#624E47}.heateor_sss_amp_yummly img{background-color:#E16120}.heateor_sss_amp_youtube img{background-color:#ff0000}.heateor_sss_amp_buffer img{background-color:#000}.heateor_sss_amp_delicious img{background-color:#53BEEE}.heateor_sss_amp_facebook img{background-color:#3C589A}.heateor_sss_amp_digg img{background-color:#006094}.heateor_sss_amp_email img{background-color:#649A3F}.heateor_sss_amp_float_it img{background-color:#53BEEE}.heateor_sss_amp_linkedin img{background-color:#0077B5}.heateor_sss_amp_pinterest img{background-color:#CC2329}.heateor_sss_amp_print img{background-color:#FD6500}.heateor_sss_amp_reddit img{background-color:#FF5700}.heateor_sss_amp_stocktwits img{background-color: #40576F}.heateor_sss_amp_mewe img{background-color:#007da1}.heateor_sss_amp_mix img{background-color:#ff8226}.heateor_sss_amp_tumblr img{background-color:#29435D}.heateor_sss_amp_twitter img{background-color:#55acee}.heateor_sss_amp_vkontakte img{background-color:#5E84AC}.heateor_sss_amp_yahoo img{background-color:#8F03CC}.heateor_sss_amp_xing img{background-color:#00797D}.heateor_sss_amp_instagram img{background-color:#527FA4}.heateor_sss_amp_whatsapp img{background-color:#55EB4C}.heateor_sss_amp_aim img{background-color: #10ff00}.heateor_sss_amp_amazon_wish_list img{background-color: #ffe000}.heateor_sss_amp_aol_mail img{background-color: #2A2A2A}.heateor_sss_amp_app_net img{background-color: #5D5D5D}.heateor_sss_amp_baidu img{background-color: #2319DC}.heateor_sss_amp_balatarin img{background-color: #fff}.heateor_sss_amp_bibsonomy img{background-color: #000}.heateor_sss_amp_bitty_browser img{background-color: #EFEFEF}.heateor_sss_amp_blinklist img{background-color: #3D3C3B}.heateor_sss_amp_blogger_post img{background-color: #FDA352}.heateor_sss_amp_blogmarks img{background-color: #535353}.heateor_sss_amp_bookmarks_fr img{background-color: #E8EAD4}.heateor_sss_amp_box_net img{background-color: #1A74B0}.heateor_sss_amp_buddymarks img{background-color: #ffd400}.heateor_sss_amp_care2_news img{background-color: #6EB43F}.heateor_sss_amp_citeulike img{background-color: #2781CD}.heateor_sss_amp_comment img{background-color: #444}.heateor_sss_amp_diary_ru img{background-color: #E8D8C6}.heateor_sss_amp_diaspora img{background-color: #2E3436}.heateor_sss_amp_dihitt img{background-color: #FF6300}.heateor_sss_amp_diigo img{background-color: #4A8BCA}.heateor_sss_amp_douban img{background-color: #497700}.heateor_sss_amp_draugiem img{background-color: #ffad66}.heateor_sss_amp_dzone img{background-color: #fff088}.heateor_sss_amp_evernote img{background-color: #8BE056}.heateor_sss_amp_facebook_messenger img{background-color: #0084FF}.heateor_sss_amp_fark img{background-color: #555}.heateor_sss_amp_fintel img{background-color: #087515}.heateor_sss_amp_flipboard img{background-color: #CC0000}.heateor_sss_amp_folkd img{background-color: #0F70B2}.heateor_sss_amp_google_classroom img{background-color: #FFC112}.heateor_sss_amp_google_bookmarks img{background-color: #CB0909}.heateor_sss_amp_google_gmail img{background-color: #E5E5E5}.heateor_sss_amp_hacker_news img{background-color: #F60}.heateor_sss_amp_hatena img{background-color: #00A6DB}.heateor_sss_amp_instapaper img{background-color: #EDEDED}.heateor_sss_amp_jamespot img{background-color: #FF9E2C}.heateor_sss_amp_kakao img{background-color: #FCB700}.heateor_sss_amp_kik img{background-color: #2A2A2A}.heateor_sss_amp_kindle_it img{background-color: #2A2A2A}.heateor_sss_amp_known img{background-color: #fff101}.heateor_sss_amp_line img{background-color: #00C300}.heateor_sss_amp_livejournal img{background-color: #EDEDED}.heateor_sss_amp_mail_ru img{background-color: #356FAC}.heateor_sss_amp_mendeley img{background-color: #A70805}.heateor_sss_amp_meneame img{background-color: #FF7D12}.heateor_sss_amp_mixi img{background-color: #EDEDED}.heateor_sss_amp_myspace img{background-color: #2A2A2A}.heateor_sss_amp_netlog img{background-color: #2A2A2A}.heateor_sss_amp_netvouz img{background-color: #c0ff00}.heateor_sss_amp_newsvine img{background-color: #055D00}.heateor_sss_amp_nujij img{background-color: #D40000}.heateor_sss_amp_odnoklassniki img{background-color: #F2720C}.heateor_sss_amp_oknotizie img{background-color: #fdff88}.heateor_sss_amp_outlook_com img{background-color: #0072C6}.heateor_sss_amp_papaly img{background-color: #3AC0F6}.heateor_sss_amp_pinboard img{background-color: #1341DE}.heateor_sss_amp_plurk img{background-color: #CF682F}.heateor_sss_amp_pocket img{background-color: #f0f0f0}.heateor_sss_amp_polyvore img{background-color: #2A2A2A}.heateor_sss_amp_printfriendly img{background-color: #61D1D5}.heateor_sss_amp_protopage_bookmarks img{background-color: #413FFF}.heateor_sss_amp_pusha img{background-color: #0072B8}.heateor_sss_amp_qzone img{background-color: #2B82D9}.heateor_sss_amp_refind img{background-color: #1492ef}.heateor_sss_amp_rediff_mypage img{background-color: #D20000}.heateor_sss_amp_renren img{background-color: #005EAC}.heateor_sss_amp_segnalo img{background-color: #fdff88}.heateor_sss_amp_sina_weibo img{background-color: #ff0}.heateor_sss_amp_sitejot img{background-color: #ffc800}.heateor_sss_amp_skype img{background-color: #00AFF0}.heateor_sss_amp_sms img{background-color: #6ebe45}.heateor_sss_amp_slashdot img{background-color: #004242}.heateor_sss_amp_stumpedia img{background-color: #EDEDED}.heateor_sss_amp_svejo img{background-color: #fa7aa3}.heateor_sss_amp_symbaloo_feeds img{background-color: #6DA8F7}.heateor_sss_amp_telegram img{background-color: #3DA5f1}.heateor_sss_amp_trello img{background-color: #1189CE}.heateor_sss_amp_tuenti img{background-color: #0075C9}.heateor_sss_amp_twiddla img{background-color: #EDEDED}.heateor_sss_amp_typepad_post img{background-color: #2A2A2A}.heateor_sss_amp_viadeo img{background-color: #2A2A2A}.heateor_sss_amp_viber img{background-color: #8B628F}.heateor_sss_amp_wanelo img{background-color: #fff}.heateor_sss_amp_webnews img{background-color: #CC2512}.heateor_sss_amp_wordpress img{background-color: #464646}.heateor_sss_amp_wykop img{background-color: #367DA9}.heateor_sss_amp_yahoo_mail img{background-color: #400090}.heateor_sss_amp_yahoo_messenger img{background-color: #400090}.heateor_sss_amp_yoolink img{background-color: #A2C538}.heateor_sss_amp_youmob img{background-color: #3B599D}.heateor_sss_amp_gentlereader img{background-color: #46aecf}.heateor_sss_amp_threema img{background-color: #2A2A2A}.heateor_sss_amp amp-img{border-radius:999px;}</style><link rel='stylesheet' id='wp-block-library-css'  href='https://masterstart.com/blog/wp-includes/css/dist/block-library/style.min.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-font-awesome-css'  href='https://masterstart.com/blog/wp-content/plugins/download-manager/assets/fontawesome/css/all.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-bootstrap-css'  href='https://masterstart.com/blog/wp-content/plugins/download-manager/assets/bootstrap/css/bootstrap.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-front-css'  href='https://masterstart.com/blog/wp-content/plugins/download-manager/assets/css/front.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfm-frontend-font-awesome-css'  href='https://masterstart.com/blog/wp-content/plugins/wp-floating-menu/css/font-awesome/font-awesome.min.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfm-frontend-genericons-css-css'  href='https://masterstart.com/blog/wp-content/plugins/wp-floating-menu/css/genericons.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfm-frontend-css-css'  href='https://masterstart.com/blog/wp-content/plugins/wp-floating-menu/css/front-end.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://masterstart.com/blog/wp-includes/css/dashicons.min.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfm-frontend-vesper-icons-css-css'  href='https://masterstart.com/blog/wp-content/plugins/wp-floating-menu/css/vesper-icons.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='dlm-frontend-css'  href='https://masterstart.com/blog/wp-content/plugins/download-monitor/assets/css/frontend.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-icomoon-css'  href='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/vendor/icomoon/style.min.css?ver=1.7' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-toc-css'  href='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=1.7' type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+</style>
+<link rel='stylesheet' id='bootstrap-css'  href='https://masterstart.com/blog/wp-content/themes/masterstart-blog/css/bootstrap.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://masterstart.com/blog/wp-content/themes/masterstart-blog/css/font-awesome.css?ver=5.2.7' type='text/css' media='all' />
+<!--[if lte IE 7]>
+<link rel='stylesheet' id='ie-css'  href='https://masterstart.com/blog/wp-admin/css/ie.min.css?ver=5.2.7' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='masterstart-css'  href='https://masterstart.com/blog/wp-content/themes/masterstart-blog/css/masterstart.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='masterstart-blog-style-css'  href='https://masterstart.com/blog/wp-content/themes/masterstart-blog/css/style.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='masterstart-blog-default-style-css'  href='https://masterstart.com/blog/wp-content/themes/masterstart-blog/style.css?ver=5.2.7' type='text/css' media='all' />
+<link rel='stylesheet' id='heateor_sss_frontend_css-css'  href='https://masterstart.com/blog/wp-content/plugins/sassy-social-share/public/css/sassy-social-share-public.css?ver=3.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='heateor_sss_sharing_default_svg-css'  href='https://masterstart.com/blog/wp-content/plugins/sassy-social-share/admin/css/sassy-social-share-svg.css?ver=3.3.2' type='text/css' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='wpfm-google-fonts-css'  href='//fonts.googleapis.com/css?family=Roboto%3A100italic%2C100%2C300italic%2C300%2C400italic%2C400%2C500italic%2C500%2C700italic%2C700%2C900italic%2C900&#038;ver=5.2.7' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/masterstart.com\/blog","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend.min.js?ver=7.10.0'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/jquery-3.3.1.min.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/download-manager/assets/bootstrap/js/bootstrap.min.js?ver=5.2.7'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/download-manager/assets/js/front.js?ver=5.2.7'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/download-manager/assets/js/chosen.jquery.min.js?ver=5.2.7'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/wp-floating-menu/js/frontend.js?ver=1.2.7'></script>
+<link rel='https://api.w.org/' href='https://masterstart.com/blog/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://masterstart.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://masterstart.com/blog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.7" />
+<link rel='shortlink' href='https://masterstart.com/blog/?p=1601' />
+<link rel="alternate" type="application/json+oembed" href="https://masterstart.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmasterstart.com%2Fblog%2Fbusiness-leadership-and-management%2Fbusiness-management-and-leadership-complete-guide%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://masterstart.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmasterstart.com%2Fblog%2Fbusiness-leadership-and-management%2Fbusiness-management-and-leadership-complete-guide%2F&#038;format=xml" />
+
+        <script>
+            var wpdm_site_url = 'https://masterstart.com/blog/';
+            var wpdm_home_url = 'https://masterstart.com/blog/';
+            var ajax_url = 'https://masterstart.com/blog/wp-admin/admin-ajax.php';
+            var wpdm_ajax_url = 'https://masterstart.com/blog/wp-admin/admin-ajax.php';
+            var wpdm_ajax_popup = '0';
+        </script>
+        <style>
+            .wpdm-download-link.btn.btn-primary.{
+                border-radius: 4px;
+            }
+        </style>
+
+
+        <link rel="amphtml" href="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/amp/"><link rel="icon" href="https://masterstart.com/blog/wp-content/uploads/2018/10/cropped-amp-logo-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://masterstart.com/blog/wp-content/uploads/2018/10/cropped-amp-logo-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://masterstart.com/blog/wp-content/uploads/2018/10/cropped-amp-logo-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://masterstart.com/blog/wp-content/uploads/2018/10/cropped-amp-logo-1-270x270.png" />
+<meta name="generator" content="WordPress Download Manager 3.0.2" />
+            <style>
+                                @import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
+                
+
+
+                .w3eden .fetfont,
+                .w3eden .btn,
+                .w3eden .btn.wpdm-front h3.title,
+                .w3eden .wpdm-social-lock-box .IN-widget a span:last-child,
+                .w3eden #xfilelist .panel-heading,
+                .w3eden .wpdm-frontend-tabs a,
+                .w3eden .alert:before,
+                .w3eden .panel .panel-heading,
+                .w3eden .discount-msg,
+                .w3eden .panel.dashboard-panel h3,
+                .w3eden #wpdm-dashboard-sidebar .list-group-item,
+                .w3eden #package-description .wp-switch-editor,
+                .w3eden .w3eden.author-dashbboard .nav.nav-tabs li a,
+                .w3eden .wpdm_cart thead th,
+                .w3eden #csp .list-group-item,
+                .w3eden .modal-title {
+                    font-family: Rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                .w3eden #csp .list-group-item{
+                    text-transform: unset;
+                }
+            </style>
+                    <style>
+
+            :root{
+                --color-primary: #4a8eff;
+                --color-primary-rgb: 74, 142, 255;
+                --color-primary-hover: #4a8eff;
+                --color-primary-active: #4a8eff;
+                --color-secondary: #4a8eff;
+                --color-secondary-rgb: 74, 142, 255;
+                --color-secondary-hover: #4a8eff;
+                --color-secondary-active: #4a8eff;
+                --color-success: #18ce0f;
+                --color-success-rgb: 24, 206, 15;
+                --color-success-hover: #4a8eff;
+                --color-success-active: #4a8eff;
+                --color-info: #2CA8FF;
+                --color-info-rgb: 44, 168, 255;
+                --color-info-hover: #2CA8FF;
+                --color-info-active: #2CA8FF;
+                --color-warning: #f29e0f;
+                --color-warning-rgb: 242, 158, 15;
+                --color-warning-hover: orange;
+                --color-warning-active: orange;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font: Rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+            .wpdm-download-link.btn.btn-primary{
+                border-radius: 4px;
+            }
+
+
+        </style>
+        </head>
+
+<body class="post-template-default single single-post postid-1601 single-format-standard wp-custom-logo">
+
+	<div id="container-fluid">
+
+	<!-- header start -->
+	<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="https://masterstart.com/blog">
+        <img src="https://masterstart.com/blog/wp-content/themes/masterstart-blog/images/logo.svg">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div id="navbar-content" class="navbar-collapse custom-xs-nav collapse"><ul id="menu-main-menu" class="navbar-nav mr-auto"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7 nav-item"><a href="https://masterstart.com/courses/" class="nav-link">Courses</a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9 nav-item"><a href="https://masterstart.com/about" class="nav-link">About</a></li>
+<li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-49 nav-item"><a href="https://masterstart.com/blog" class="nav-link">Blog</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10 nav-item"><a href="https://masterstart.com/business" class="nav-link">Business</a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11 nav-item"><a href="https://masterstart.com/help" class="nav-link">Contact Us</a></li>
+</ul></div>
+    
+</nav>
+<!-- header end -->
+
+<div class="strip-section-wrap">
+	<div class="container">
+		<div class="strip-section">
+			<div class="row">
+				<div class="col-sm-8">
+					<section class="breadcrumbs"><ul id="breadcrumbs"><li class="item-home"><a class="bread-link bread-home" href="https://masterstart.com/blog" title="Home">Home</a></li><li class="separator separator-home"> &gt; </li><li class="item-cat"><a href="https://masterstart.com/blog/category/business-leadership-and-management/">Business Leadership and Management</a></li><li class="separator"> &gt; </li><li class="item-current item-1601"><strong class="bread-current bread-1601" title="Everything you need to know about business management and leadership">Everything you need to know about business management and leadership</strong></li></ul></section>				</div>
+				<div class="col-sm-4">
+					<div class="form-section">
+						<form role="search" method="get" id="searchform" action="https://masterstart.com/blog">
+							<input type="text" name="s" placeholder="Search Blog" class="form-control mb-0">
+							<button class="fa fa-search"></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- strip-section-wrap -->
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		
+<div class="blog-detail-wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="blog-detail">
+                    <h1>Everything you need to know about business management and leadership</h1>
+					<div class="top-desc">
+						<a href="#">Becky Leighton</a> - <a href="#">1st April</a> <span class="eta"></span> read
+					</div>
+                    
+<figure class="wp-block-image"><a href="https://masterstart.com/courses/business-leadership-and-management-principles-and-practices-short-course"><img src="https://masterstart.com/blog/wp-content/uploads/2019/04/BLM-content-cluster.png" alt="business management guide"/></a></figure>
+
+
+
+<div id="ez-toc-container" class="counter-hierarchy counter-decimal ez-toc-grey">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">Table of Contents</p>
+<span class="ez-toc-title-toggle"><a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a></span></div>
+<nav><ul class="ez-toc-list"><li><a href="#What_is_Business_Management_and_Leadership" title="What is Business Management and Leadership?">What is Business Management and Leadership?</a></li><li><a href="#What_does_a_business_manager_do" title="What does a business manager do?">What does a business manager do?</a></li><li><a href="#What_are_the_duties_of_a_business_manager" title="What are the duties of a business manager?">What are the duties of a business manager?</a></li><li><a href="#The_business_process_management_BPM" title="The business process management (BPM)">The business process management (BPM)</a><ul><li><a href="#Designing" title="Designing">Designing</a></li><li><a href="#Modelling" title="Modelling">Modelling</a></li><li><a href="#Execution" title="Execution">Execution</a></li><li><a href="#Monitoring" title="Monitoring">Monitoring</a></li><li><a href="#Optimisation" title="Optimisation">Optimisation</a></li></ul></li><li><a href="#Business_management_in_industry" title="Business management in industry">Business management in industry</a><ul><li><a href="#Business_management_and_finance" title="Business management and finance">Business management and finance</a></li><li><a href="#Business_management_and_business_marketing" title="Business management and business marketing">Business management and business marketing</a></li><li><a href="#Business_management_in_operations_management" title="Business management in operations management">Business management in operations management</a></li><li><a href="#Business_management_in_human_resources" title="Business management in human resources">Business management in human resources</a></li><li><a href="#Business_management_in_IT" title="Business management in IT">Business management in IT</a></li><li><a href="#Business_management_in_distribution" title="Business management in distribution">Business management in distribution</a></li></ul></li><li><a href="#What_to_study_if_you_want_to_become_a_business_manager" title="What to study if you want to become a business manager">What to study if you want to become a business manager</a></li><li><a href="#Technology_and_computer_software_in_business_management" title="Technology and computer software in business management">Technology and computer software in business management</a></li><li><a href="#Business_management_careers" title="Business management careers">Business management careers</a></li><li><a href="#Are_business_management_jobs_right_for_me" title="Are business management jobs right for me?">Are business management jobs right for me?</a></li><li><a href="#Business_management_salary_summary" title="Business management salary summary">Business management salary summary</a></li><li><a href="#Is_the_leader_the_same_as_a_manager" title="Is the leader the same as a manager?">Is the leader the same as a manager?</a></li><li><a href="#What_are_the_five_management_and_leadership_styles" title="What are the five management and leadership styles?">What are the five management and leadership styles?</a><ul><li><a href="#Participative_leadership" title="Participative leadership">Participative leadership</a></li><li><a href="#Autocratic_or_authoritarian_leadership" title="Autocratic or authoritarian leadership">Autocratic or authoritarian leadership</a></li><li><a href="#Laissez-Faire_leadership" title="Laissez-Faire leadership">Laissez-Faire leadership</a></li><li><a href="#Transformational_leadership" title="Transformational leadership">Transformational leadership</a></li><li><a href="#Servant_leadership" title="Servant leadership">Servant leadership</a></li></ul></li><li><a href="#Business_management_tips" title="Business management tips">Business management tips</a></li><li><a href="#Keep_your_eye_on_the_prize_and_focus_on_what_is_important" title="Keep your eye on the prize and focus on what is important">Keep your eye on the prize and focus on what is important</a></li><li><a href="#Constantly_look_for_ways_to_streamline_processes" title="Constantly look for ways to streamline processes ">Constantly look for ways to streamline processes </a></li><li><a href="#Delegate_responsibly_and_hire_individuals_you_dont_need_to_micromanage" title="Delegate responsibly and hire individuals you don’t need to micromanage">Delegate responsibly and hire individuals you don’t need to micromanage</a></li><li><a href="#Take_advantage_of_the_benefits_of_technology" title="Take advantage of the benefits of technology">Take advantage of the benefits of technology</a></li><li><a href="#The_benefits_of_studying_business_management" title="The benefits of studying business management">The benefits of studying business management</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="What_is_Business_Management_and_Leadership">What is Business Management and Leadership?</span></h2>
+
+
+
+<p><a href="https://masterstart.com/courses/business-leadership-and-management-principles-and-practices-short-course">Business management</a> is the process of dealing with the administration of any sort of organisation. It involves overseeing, monitoring, and supervising a team in tasks to ensure that the business is running smoothly.<br> Fundamentally, the business manager is the individual within a company who is responsible for running the business and ensuring that tasks are completed in time and within the allocated budget.</p>
+
+
+
+<h2><span class="ez-toc-section" id="What_does_a_business_manager_do">What does a business manager do?</span></h2>
+
+
+
+<p>The business manager of a company is in charge of the operations and activities of the employees of the business. <br>Smaller companies require business managers to ensure that the work of the employees is well aligned with the objectives of the business. In these companies, the manager either owns the business or reports directly to the owner.<br>In larger companies, the business manager has the same duties as those of smaller companies but will report to executive directors or chief administrative figures.</p>
+
+
+
+<h2><span class="ez-toc-section" id="What_are_the_duties_of_a_business_manager">What are the duties of a business manager?</span></h2>
+
+
+
+<p>A business manager’s exact duties are dependent on the company for which they work and the industry in which they are involved. Basically, the duties are:<br></p>
+
+
+
+<p>1. Overseeing employees<br>2. Streamlining business processes<br>3. Reviewing company protocol<br>4. Reporting to executives or owners of the company<br>5. Managing and tracking inventory</p>
+
+
+
+<h2><span class="ez-toc-section" id="The_business_process_management_BPM">The business process management (BPM)</span></h2>
+
+
+
+<p>The business process management is known to have five stages from start to finish. These make up a practice which managers undertake to build and sustain a successful business. The process also helps to streamline the business running so that operations are smooth and efficient.</p>
+
+
+
+<p>&#8211; Design<br>&#8211; Model<br>&#8211; Execute<br>&#8211; Monitor<br>&#8211; Optimise</p>
+
+
+
+<h3><span class="ez-toc-section" id="Designing">Designing</span></h3>
+
+
+
+<p>The initial phase in the business process management looks at how things are going to be in business operations. This includes planning strategies such as scheduling and budgeting, as well as focusing on risk management and control mechanisms.<br></p>
+
+
+
+<h3><span class="ez-toc-section" id="Modelling">Modelling</span></h3>
+
+
+
+<p>Modelling in business looks at the hypothetical design and adds in a number of potential factors which could change within the execution. For example, there could be changes in materials before building a product. The modelling phase looks at “what if” scenarios and focuses on how to deal with them if they do arise.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Execution">Execution</span></h3>
+
+
+
+<p>As the title might suggest, the execution in business is the act of putting the plan into action. Using the design and the model planning, the execution actively puts the pieces in place. The processes of implementation are generally a combination of manual labour and software automation.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Monitoring">Monitoring</span></h3>
+
+
+
+<p>After the launch of a business or business component, the progress needs to be tracked. This monitoring helps to see what is or is not working. Elements which could be monitored are the time taken to perform a task, the budget usage, whether there could be improved productivity, or if there are any concerns which need to be dealt with.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Optimisation">Optimisation</span></h3>
+
+
+
+<p>After monitoring, there will be performance issues which will be identified, especially in a newly launched business. Optimisation includes inspecting the information from monitoring, using key research from modelling, and looking at ways to smooth out the problems. The optimising could be removing issues as well as bettering the things which work already. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://masterstart.com/courses/business-leadership-and-management-principles-and-practices-short-course?utm_source=blog&amp;utm_medium=banner&amp;utm_term=middle_banner"><img src="https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-1024x536.png" alt="business management and leadership course online" class="wp-image-2419" srcset="https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-1024x536.png 1024w, https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-300x157.png 300w, https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-768x402.png 768w, https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure></div>
+
+
+
+<h2><span class="ez-toc-section" id="Business_management_in_industry">Business management in industry</span></h2>
+
+
+
+<h3><span class="ez-toc-section" id="Business_management_and_finance">Business management and finance</span></h3>
+
+
+
+<p>Business management goes hand-in-hand with finance. If you are managing a business, you need to know the economic situation of both the business and the country. Knowing how to use your money to make more money is one of the fundamental points of business management.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Business_management_and_business_marketing">Business management and business marketing</span></h3>
+
+
+
+<p>Marketing helps to grow business relationships with customers and stakeholders. If the marketing of a company is strong, it will have a great effect on the business. This is because the consumer gets to know and trust a company through marketing. If a well-managed business offers a sound product and can market it correctly to its target market, it will have a much better chance at success than one with a weak marketing arm.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Business_management_in_operations_management">Business management in operations management</span></h3>
+
+
+
+<p>A person responsible for business management and operations should have a focus on the monitoring and optimisation of the business. This is in order to ensure that operations run as smoothly as possible which results in efficiency which is beneficial for both the task force and the budget. When things run well and quickly, it ultimately saves time and money.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Business_management_in_human_resources">Business management in human resources</span></h3>
+
+
+
+<p>Human resourcing is founded on the relationships within the business. Business managers are good with looking after the people that work for them will, more often than not, receive good work in a timeous manner. A happy team is an efficient team.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Business_management_in_IT">Business management in IT</span></h3>
+
+
+
+<p>An information technology (IT) manager is involved in designing, applying and maintaining the technological components of a business. This could be related to computer science in both hardware and software and requires an individual who is proficient in both managing people and understanding technology.<br></p>
+
+
+
+<h3><span class="ez-toc-section" id="Business_management_in_distribution">Business management in distribution</span></h3>
+
+
+
+<p>When things are correctly in place, the industry of distribution can be a delightfully streamlined dream. If something is not in place, though, it can be a nightmare. Because there are so many different processes within distribution, it needs to be carefully managed. A business manager involved in distribution needs to be exceptionally organised, communicative, and systematic in their management.</p>
+
+
+
+<h2><span class="ez-toc-section" id="What_to_study_if_you_want_to_become_a_business_manager">What to study if you want to become a business manager</span></h2>
+
+
+
+<p>If business management is something which sounds like an exciting career prospect, or if you’d like to gain additional knowledge in leading and managing a company &#8211; whether its someone else’s or your own &#8211; a <a href="https://masterstart.com/courses/business-leadership-and-management-short-course" target="_blank" rel="noreferrer noopener" aria-label="Business and Leadership Management short course (opens in a new tab)">Business and Leadership Management short course</a> from MasterStart is what you are looking for.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Technology_and_computer_software_in_business_management">Technology and computer software in business management</span></h2>
+
+
+
+<p>Technology is designed as a solution to a problem. In business, it is developed and used to resolve difficult issues as well as make things easier for operations. Over time, software has been built to help with management with tasks such as scheduling, communication, social media, tracking, and productivity.</p>
+
+
+
+<p>Knowing how to use the right technology can give a business manager the upper hand over the competition. It is important that a business manager and a company leader stays updated with tools and programs which offer technical advantages to build and maintain success.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Business_management_careers">Business management careers</span></h2>
+
+
+
+<p>Entering the field of management is not a one-step process and one cannot expect to become a top business manager without experience. Entry-level jobs as managers and administrative roles are a good place to start your journey to Business Management. Getting a relevant certificate in business leadership helps promote a person as a candidate for a management career too. </p>
+
+
+
+<p>Starting as an intern or personal assistant to a company’s management is a great first step in becoming a manager. In this position, a person learns essential skills while gaining the necessary experience. From there, one needs to either take advantage of opportunities that present themselves or must actively seek out openings to advance one’s career.</p>
+
+
+
+<p>Completing a short course in business management is also a worthwhile use of time and funds as it not only teaches you valuable lessons in the techniques of practical management, but it also shows potential employers that you are invested in management as a career prospect.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Are_business_management_jobs_right_for_me">Are business management jobs right for me?</span></h2>
+
+
+
+<p>There are particular skills needed to manage a business. If you are interested in becoming a business manager or stepping into a leadership role, first see if you are well-suited to the job. The following characteristics are essential to be an excellent business manager:<br></p>
+
+
+
+<p>&#8211; Concise communication;<br>&#8211; Marketing-minded;<br>&#8211; Economy expertise;<br>&#8211; Proficient at planning; <br>&#8211; Notable networker.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Business_management_salary_summary">Business management salary summary</span></h2>
+
+
+
+<p>Experienced business managers are sought after by professionals who are looking to take their company to the next level of success. Because there is a certain amount of pressure on a manager to perform, there is remuneration for the work and stress that might come with.<br> According to payscale, an employee who has undertaken short courses in business management and leadership can expect to earn the following according to their occupational level:<br></p>
+
+
+
+<table class="wp-block-table has-fixed-layout is-style-stripes"><tbody><tr><td><strong> Occupational level  </strong></td><td><strong>Average annual income </strong></td></tr><tr><td>Entry level</td><td> R293.014 </td></tr><tr><td>Mid-career professional                    <br></td><td>R477,287 </td></tr><tr><td>Top-end professional </td><td>R501,493</td></tr></tbody></table>
+
+
+
+<p></p>
+
+
+
+<p>Furthermore, bonus remuneration in the project management industry varies according to your experience and ranges from R27,000 – R51,456. </p>
+
+
+
+<h2><span class="ez-toc-section" id="Is_the_leader_the_same_as_a_manager">Is the leader the same as a manager?</span></h2>
+
+
+
+<p>Although both share similar traits, a manager does not need to be a leader. The key difference between the two is that managers look to complete projects using a team while leaders look to build up individuals in order to complete a task. </p>
+
+
+
+<p>Other differences are:</p>
+
+
+
+<p>&#8211; Leaders hope to encourage their people while managers hope to execute projects<br>&#8211; Leaders are willing to make innovative changes while managers tend to focus on sustaining what works<br>&#8211; Leaders take risks while managers look to control and decrease the risk</p>
+
+
+
+<p>This being said, a great manager is also a great leader and managing and leading well is what every individual in Business Management should hope to achieve. </p>
+
+
+
+<h2><span class="ez-toc-section" id="What_are_the_five_management_and_leadership_styles">What are the five management and leadership styles?</span></h2>
+
+
+
+<p>While leading ultimately results in a leader administrating tasks to subordinates, the process of management can look different to each leader and each company. There are five styles which a person generally displayed when leading:</p>
+
+
+
+<p>&#8211; Participative<br>&#8211; Autocratic<br>&#8211; Laissez-Faire<br>&#8211; Transformational<br>&#8211; Servant </p>
+
+
+
+<figure class="wp-block-image"><a href="https://masterstart.com/courses/leadership-principles-and-practices-short-course"><img src="https://masterstart.com/blog/wp-content/uploads/2019/04/Leadership-styles-1024x1024.png" alt="Five styles of leadership" class="wp-image-1602" srcset="https://masterstart.com/blog/wp-content/uploads/2019/04/Leadership-styles-1024x1024.png 1024w, https://masterstart.com/blog/wp-content/uploads/2019/04/Leadership-styles-150x150.png 150w, https://masterstart.com/blog/wp-content/uploads/2019/04/Leadership-styles-300x300.png 300w, https://masterstart.com/blog/wp-content/uploads/2019/04/Leadership-styles-768x768.png 768w, https://masterstart.com/blog/wp-content/uploads/2019/04/Leadership-styles.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<h3><span class="ez-toc-section" id="Participative_leadership">Participative leadership</span></h3>
+
+
+
+<p>Participative leaders involve their team in decision-making and high-end processes. It is a style which obtains opinions from the staff and often allows employees to vote on a course of action pertinent to the company.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Autocratic_or_authoritarian_leadership">Autocratic or authoritarian leadership</span></h3>
+
+
+
+<p>Autocratic leaders tell their employees what to do and when to do it without seeking their advice. An authoritarian leadership style leaves little autonomy with the team members within a company, which results in a strong controlling figure.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Laissez-Faire_leadership">Laissez-Faire leadership</span></h3>
+
+
+
+<p>Laissez-faire leaders are also known as delegators. This leadership style works with creative companies as the hands-off and relaxed approach allows for innovation and design.</p>
+
+
+
+<h3><span class="ez-toc-section" id="Transformational_leadership">Transformational leadership</span></h3>
+
+
+
+<p>Transformational leaders look to make changes within the company to improve systems and workloads. </p>
+
+
+
+<h3><span class="ez-toc-section" id="Servant_leadership">Servant leadership</span></h3>
+
+
+
+<p>Servant leaders focus more on their employees than on anything else. The goal of the leader is to serve and to keep other people in mind. This is an altruistic style and is found primarily in non-profit organisations or companies founded on giving towards others.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Business_management_tips">Business management tips</span></h2>
+
+
+
+<p>There are good ways to run a business and then there are other ways. If you either own or run a business, you need to keep updated with what works and what doesn’t in managing a business.</p>
+
+
+
+<p>1. Keep your eye on the prize and focus on what is important<br>2. Constantly look for ways to streamline processes <br>3. Delegate responsibly and hire individuals you don’t need to micromanage<br>4. Take advantage of the benefits of technology</p>
+
+
+
+<p>In all of these, the fundamental idea is to make things work effectively and efficiently to save time and ultimately save money. If you focus on important tasks &#8211; even if they are mind-numbingly tedious &#8211; you will likely solve issues before they arise which will save you energy to go towards more exciting projects. </p>
+
+
+
+<h2><span class="ez-toc-section" id="Keep_your_eye_on_the_prize_and_focus_on_what_is_important">Keep your eye on the prize and focus on what is important</span></h2>
+
+
+
+<p>Focus on the important tasks at hand and make it practice to understand what your day should look like before going into it. This planning will spare you many headaches and save you time in the long run. If you can sort out for a problem before it actually becomes an issue, you’ll be able to get a lot more done in the workday.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Constantly_look_for_ways_to_streamline_processes">Constantly look for ways to streamline processes </span></h2>
+
+
+
+<p>If you can put things in place to help your employees do their jobs with ease, you’ll see a lot more productivity as the work gets completed. Constantly look for the technology, strategies, and business methods to make processes more efficient and you’ll quickly gain back the time spent looking for ways to improve the company’s runnings. You’ll also have a happier, more productive staff on your team.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Delegate_responsibly_and_hire_individuals_you_dont_need_to_micromanage">Delegate responsibly and hire individuals you don’t need to micromanage</span></h2>
+
+
+
+<p>A bad business manager does all the work without any help. A good business manager knows when and to whom to delegate a task. If you know your team well enough, you’ll know who will be the best to do a task and who will enjoy it the most.  </p>
+
+
+
+<p>Managing people to manage themselves through delegation is a crucial aspect of business management. If you can hire someone and train them to perform duties with only a little encouragement, then you’ve got a fantastic team member. In business management, choosing and training of your team is an important skill to learn early on.</p>
+
+
+
+<h2><span class="ez-toc-section" id="Take_advantage_of_the_benefits_of_technology">Take advantage of the benefits of technology</span></h2>
+
+
+
+<p>There is technology which has been developed to assist a business manager. Use it. <br>Think of the time you might spend trying to do something manually when a mobile app could do it in seconds. This goes hand-in-hand with streamlining processes: constantly look for whats technology can help you and test it to see if it works for your team.</p>
+
+
+
+<h2><span class="ez-toc-section" id="The_benefits_of_studying_business_management">The benefits of studying business management</span></h2>
+
+
+
+<p>In doing a business and leadership management <a href="https://masterstart.com/courses">short course</a>, you learn a number of essential management techniques which give insight into what managing a business look like and how to tackle the tricky task of leading a team. <br></p>
+
+
+
+<p>In doing a management course, you learn the fundamentals of running a business, which gives you an advantage over other managers. You also learn how to understand modern management strategies while getting to grips with economic and financial terminology.<br></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><a href="https://masterstart.com/courses/business-leadership-and-management-principles-and-practices-short-course?utm_source=blog&amp;utm_medium=banner&amp;utm_term=bottom_banner"><img src="https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-1024x536.png" alt="business management and leadership course online" class="wp-image-2419" srcset="https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-1024x536.png 1024w, https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-300x157.png 300w, https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course-768x402.png 768w, https://masterstart.com/blog/wp-content/uploads/2018/03/Business-Leadership-and-mangement-course.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure></div>
+					<div class="share-wrap">
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="share-section">
+                                    <div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" ss-offset="0" heateor-sss-data-href='https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/'><ul class="heateor_sss_sharing_ul"><li style="padding:7.35px 0 !important" class="heateor_sss_facebook_share"><div class="fb-share-button" data-href="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" data-layout="button"></div></li><li style="padding:7.35px 0 !important" class="heateor_sss_facebook_like"><div class="fb-like" data-href="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li><li style="padding:7.35px 0!important;margin-top:-2px!important;" class="heateor_sss_linkedin_share"><script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-url="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" data-counter="right"></script></li><li style="padding:7.35px 0!important" class="heateor_sss_twitter_tweet" heateor-sss-data-href="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" data-counturl="https://masterstart.com/blog/business-leadership-and-management/business-management-and-leadership-complete-guide/" data-text="Everything+you+need+to+know+about+business+management+and+leadership" data-via="" data-lang="en_US" >Tweet</a><script>!function(d,s,id) {var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if ( !d.getElementById(id) ) {js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script></li></ul><div class="heateorSssClear"></div></div>								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="share-view">
+									<a href="#">2079 Views</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- blog-detail-wrap -->
+
+
+<div id="main-wrap">
+    <div class="container">
+
+                
+        <div class="blog-wrap">
+            <div class="blog-top">
+                <h2>Related Stories</h2>
+                <p></p>
+            </div>
+            <div class="row">
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/online-learning/11-ways-to-turn-your-year-around/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/08/ms-blog-21-aug.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/online-learning/11-ways-to-turn-your-year-around/">
+                    11 Ways to Turn Your Year Around                </a>
+            </h3>
+			<div class="blog-date">21st August 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>It’s been a fair few months of hibernation now and we don’t know about you, but we’re ready&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/online-learning/11-ways-to-turn-your-year-around/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/general/the-5-women-who-can-transform-your-business/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/07/blog-image-7-aug.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/general/the-5-women-who-can-transform-your-business/">
+                    The 5 Women Who Can Transform Your Business                </a>
+            </h3>
+			<div class="blog-date">7th August 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>Here at MasterStart, we just love August for the opportunity that it presents to honour and celebrate the&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/general/the-5-women-who-can-transform-your-business/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/general/take-action-inspire-change-ted-talks-that-will-change-your-view-of-corporate-activism/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/07/blog-image-17-july.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/general/take-action-inspire-change-ted-talks-that-will-change-your-view-of-corporate-activism/">
+                    Take Action, Inspire Change. TED Talks That Will Change Your View of Corporate Activism                </a>
+            </h3>
+			<div class="blog-date">17th July 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>While every day brings new waves of hope, inspiration and motivation, tomorrow shines as a particularly special opportunity&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/general/take-action-inspire-change-ted-talks-that-will-change-your-view-of-corporate-activism/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/online-learning/new-skills/ai-in-business-what-you-need-to-know/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/06/MS-Blog-10-July-2020_2.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/online-learning/new-skills/ai-in-business-what-you-need-to-know/">
+                    AI in Business: What You Need to Know                </a>
+            </h3>
+			<div class="blog-date">10th July 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>AI (Artificial Intelligence) has gone from being the stuff of sci-fi to a widely implemented technology in many&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/online-learning/new-skills/ai-in-business-what-you-need-to-know/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/general/motivation-inspiration/8-ways-to-work-smart-not-hard/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/06/MS-Blog-3-july.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/general/motivation-inspiration/8-ways-to-work-smart-not-hard/">
+                    8 Ways to Work Smart, Not Hard                </a>
+            </h3>
+			<div class="blog-date">3rd July 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>Hard work is the foundation of a long, rewarding and successful career. However, you will find that the&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/general/motivation-inspiration/8-ways-to-work-smart-not-hard/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/uncategorized/how-to-separate-facts-from-fiction-emmanuel-gamors-3-step-strategy/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/06/ms-blog-29-june.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/uncategorized/how-to-separate-facts-from-fiction-emmanuel-gamors-3-step-strategy/">
+                    How to Separate Facts from Fiction Emmanuel Gamor’s 3-Step Strategy                </a>
+            </h3>
+			<div class="blog-date">26th June 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>With the advent of social media and the ability of every smartphone owner to become a content producer,&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/uncategorized/how-to-separate-facts-from-fiction-emmanuel-gamors-3-step-strategy/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/online-learning/regain-control-through-proactivity-education/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/06/ms-blog-22-june.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/online-learning/regain-control-through-proactivity-education/">
+                    Regain Control through Proactivity &#038; Education                </a>
+            </h3>
+			<div class="blog-date">19th June 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>If the past few months have shown us anything, it’s that we can never be too prepared for&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/online-learning/regain-control-through-proactivity-education/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/online-learning/5-ways-online-learning-can-reignite-your-productivity/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/06/ms-blog-15-june.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/online-learning/5-ways-online-learning-can-reignite-your-productivity/">
+                    5 Ways Online Learning Can Reignite Your Productivity                </a>
+            </h3>
+			<div class="blog-date">12th June 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>The past few months have been an absolute whirlwind that has seen workers and students all over the&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/online-learning/5-ways-online-learning-can-reignite-your-productivity/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/online-learning/which-masterstart-course-is-right-for-your-2020-comeback/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/06/Risk.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/online-learning/which-masterstart-course-is-right-for-your-2020-comeback/">
+                    Which MasterStart Course is Right for YOUR 2020 Comeback?                </a>
+            </h3>
+			<div class="blog-date">5th June 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>Now, we’re going to go out on a limb here and guess that your 2020 hasn’t exactly gone&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/online-learning/which-masterstart-course-is-right-for-your-2020-comeback/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                                    
+
+<div class="col-sm-6 col-lg-4">
+	<div class="blog">
+		<div class="blog-img">
+            <a href="https://masterstart.com/blog/uncategorized/dare-to-be-different-this-dare-day/">
+                <img src="https://masterstart.com/blog/wp-content/uploads/2020/05/MS_blog_1200x675_1June-1-1.png" alt="">
+            </a>
+        </div>
+		<div class="blog-info">
+			<h3>
+                <a href="https://masterstart.com/blog/uncategorized/dare-to-be-different-this-dare-day/">
+                    Dare to Be Different This Dare Day                </a>
+            </h3>
+			<div class="blog-date">29th May 2020</div>
+			<div class="sep-blog sep-lilac"></div>
+			<div class="blog-para">
+				<p>Although many of us are affected by the global economic impact of COVID-19, it’s important to remind ourselves&#8230;</p>
+			</div>
+			<p>
+				<a href="https://masterstart.com/blog/uncategorized/dare-to-be-different-this-dare-day/" class="btn btn-lilac">Read More</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+                            </div>
+        </div><!-- blog-wrap -->
+
+                        
+        
+        <p class="center">
+        	<a href="https://masterstart.com/blog/home/" class="btn btn-lg btn-blue">View More</a>
+        </p>
+
+
+    </div>
+</div>
+<!-- main-wrap -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<!--footer start -->
+	<footer class="secondary">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 payments">
+					<img src="https://masterstart.com/blog/wp-content/themes/masterstart-blog/images/payment-processors.png">
+				</div>
+				<div class="col-lg-4 social">
+					<a href="https://www.facebook.com/masterstartsa" target="_blank">
+						<img src="https://masterstart.com/blog/wp-content/themes/masterstart-blog/images/fb.png">
+					</a>
+					<a href="https://twitter.com/masterstartsa" target="_blank">
+						<img src="https://masterstart.com/blog/wp-content/themes/masterstart-blog/images/twitter.png">
+					</a>
+					<a href="https://plus.google.com/+Masterstart" target="_blank">
+						<img src="https://masterstart.com/blog/wp-content/themes/masterstart-blog/images/google.png">
+					</a>
+					<a href="https://za.linkedin.com/company/masterstart" target="_blank">
+						<img src="https://masterstart.com/blog/wp-content/themes/masterstart-blog/images/linkedin.png">
+					</a>
+				</div>
+				<div class="col-lg-2">
+					<p class="f">&copy; 2020 MasterStart</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--footer end -->
+
+</div><!--container-fluid -->
+
+<script type='text/javascript' src='https://masterstart.com/blog/wp-includes/js/jquery/jquery.form.min.js?ver=4.2.1'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/modernizr.min.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/popper.min.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/bootstrap.min.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/belated.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/readingTime.min.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/fun.js?ver=20151218'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/navigation.js?ver=20151215'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/themes/masterstart-blog/js/skip-link-focus-fix.js?ver=20151215'></script>
+<script type='text/javascript'>
+function heateorSssLoadEvent(e) {var t=window.onload;if (typeof window.onload!="function") {window.onload=e}else{window.onload=function() {t();e()}}};	var heateorSssSharingAjaxUrl = 'https://masterstart.com/blog/wp-admin/admin-ajax.php', heateorSssCloseIconPath = 'https://masterstart.com/blog/wp-content/plugins/sassy-social-share/public/../images/close.png', heateorSssPluginIconPath = 'https://masterstart.com/blog/wp-content/plugins/sassy-social-share/public/../images/logo.png', heateorSssHorizontalSharingCountEnable = 0, heateorSssVerticalSharingCountEnable = 0, heateorSssSharingOffset = -10; var heateorSssMobileStickySharingEnabled = 0;var heateorSssCopyLinkMessage = "Link copied.";var heateorSssUrlCountFetched = [], heateorSssSharesText = 'Shares', heateorSssShareText = 'Share';function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")}function heateorSssInitiateFB() {FB.init({appId:"",channelUrl:"",status:!0,cookie:!0,xfbml:!0,version:"v3.0"})}window.fbAsyncInit=function() {heateorSssInitiateFB(),0&&(FB.Event.subscribe("edge.create",function(e) {heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"")}),FB.Event.subscribe("edge.remove",function(e) {heateorSsmiMycredPoints("Facebook_like_recommend","",e?e:"","Minus point(s) for undoing Facebook like-recommend")}) ),0&&(FB.Event.subscribe("edge.create",function(e) {heateorSsgaSocialPluginsTracking("Facebook","Like",e?e:"")}),FB.Event.subscribe("edge.remove",function(e) {heateorSsgaSocialPluginsTracking("Facebook","Unlike",e?e:"")}) )},function(e) {var n,i="facebook-jssdk",o=e.getElementsByTagName("script")[0];e.getElementById(i)||(n=e.createElement("script"),n.id=i,n.async=!0,n.src="//connect.facebook.net/en_US/sdk.js",o.parentNode.insertBefore(n,o) )}(document);;var heateorSssWhatsappShareAPI = "web";
+</script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/sassy-social-share/public/js/sassy-social-share-public.js?ver=3.3.2'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-includes/js/wp-embed.min.js?ver=5.2.7'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min.js?ver=1.5.5'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js?ver=2.0.3'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js?ver=1.9.2'></script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/vendor/waypoints/jquery.waypoints.min.js?ver=1.9.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"1","width":"auto","scroll_offset":"30"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://masterstart.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js?ver=1.7'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2365566b40","applicationID":"162767507","transactionName":"ZgEDMBMFXktYU0VfXV9LIAcVDV9WFkNYWFVdAQ==","queueTime":0,"applicationTime":2045,"atts":"SkYARlsfTUU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
